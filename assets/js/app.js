@@ -136,6 +136,7 @@ createMovieCards(movieArr);
 
 
 const MovieModelHandler = () => {
+    movieForm.reset();
   backDrop.classList.toggle('active');
   movieModel.classList.toggle('active');
 }
@@ -235,7 +236,7 @@ const onMovieUpdate = () => {
                             </figcaption>
                         </figure>
      `
-     MovieModelHandler()
+
      snackBar(`new movie ${updatedMovie.movietitle} is updated successfully`, `success`);
 }
 
