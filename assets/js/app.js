@@ -132,7 +132,7 @@ movieCardContainer.innerHTML = movieCardsResult;
 
 }
 
-createMovieCards(movieArr);
+createMovieCards(movieArr); 
 
 
 const MovieModelHandler = () => {
