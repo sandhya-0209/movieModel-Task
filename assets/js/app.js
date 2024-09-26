@@ -136,7 +136,7 @@ createMovieCards(movieArr);
 
 
 const MovieModelHandler = () => {
-    movieForm.reset();
+  movieForm.reset();
   backDrop.classList.toggle('active');
   movieModel.classList.toggle('active');
 }
