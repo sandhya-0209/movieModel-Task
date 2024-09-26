@@ -152,8 +152,6 @@ const onMovieSubmit = (eve) => {
     }
 
     movieArr.unshift(newMovieObj);
-    eve.target.reset();
-    
   let cardDiv = document.createElement('div');
   cardDiv.className = `col-md-6 col-lg-3 mb-4`;
   cardDiv.innerHTML = `
@@ -204,13 +202,13 @@ const onMovieUpdate = () => {
         overview : overviewControl.value,
         rating : ratingControl.value,
         movieUrl : movieUrlControl.value,
-        movieId : uuid()
+        movieId : editId
     }
     let getIndex = movieArr.findIndex(movie => movie.movieId === editId);
      movieArr[getIndex] = updatedMovie;
      
      let card = [...document.getElementById(editId).children];
-     card[0].innerHTML = `<h3 class='mb-0 movieTitle'>${updatedMovie.movietitle}</h3>`;
+     card[0].innerHTML = `<h3 class='mb-0 movieTitle'>${updatedMovie.movietitle}</h3>`
      card[1].innerHTML = `
                  <figure class='mb-0'>
                             <img class="w-100"
@@ -236,7 +234,9 @@ const onMovieUpdate = () => {
                             </figcaption>
                         </figure>
      `
-
+    updateBtn.classList.add('d-none');
+    submitBtn.classList.remove('d-none')
+     MovieModelHandler();
      snackBar(`new movie ${updatedMovie.movietitle} is updated successfully`, `success`);
 }
 
